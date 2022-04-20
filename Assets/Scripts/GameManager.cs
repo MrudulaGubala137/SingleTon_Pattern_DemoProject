@@ -7,6 +7,7 @@ public sealed class GameManager
     // Start is called before the first frame update
    private static GameManager instance;
     private List<GameObject> trashCans=new List<GameObject>();
+    private List<GameObject> goalPoints=new List<GameObject>();
     public List<GameObject> TrashCans { get { return trashCans; }}
     public static GameManager Instance { 
         get { 
@@ -19,10 +20,10 @@ public sealed class GameManager
     {
         TrashCans.Add(tempTrashCan);
     }
-    public void RemoveTrashCan(int index)
+    public void RemoveTrashCan(GameObject tempTrashCan)
     {
-        //int index = trashCans.IndexOf(tempTrashCan);
+        int index = trashCans.IndexOf(tempTrashCan);
+        GameObject.Destroy(trashCans[index]);
         TrashCans.RemoveAt(index);
-    
     }
 }

@@ -19,9 +19,24 @@ public class EthanController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if(agent.remainingDistance<1f)
         {
             GotoLocation();
+        }
+       // Vector3.Distance(this.transform.position,);
+       foreach(GameObject item in GameManager.Instance.TrashCans)
+        {
+          float tempDistance= Vector3.Distance(this.transform.position,item.transform.position);
+            if(tempDistance < 5f && Random.Range(0,10)<5)
+            {
+               // print("char distance is below 5");
+                agent.SetDestination(lastPoint);
+            }
+            else if(tempDistance <1f)
+            {
+                GameManager.Instance.RemoveTrashCan(item);
+            }
         }
     }
     public void GotoLocation()

@@ -6,6 +6,8 @@ public class SpawnManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject healthPrefab;
+    GameObject temp;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -21,16 +23,17 @@ public class SpawnManager : MonoBehaviour
             Ray ray=Camera.main.ScreenPointToRay(Input.mousePosition);
             if(Physics.Raycast(ray.origin, ray.direction,out hit))
             {
-                GameObject temp=Instantiate(healthPrefab,hit.point,Quaternion.identity);
+                temp=Instantiate(healthPrefab,hit.point,Quaternion.identity);
+             
                 GameManager.Instance.AddTrashCan(temp);
                 print(GameManager.Instance.TrashCans.Count);
             }
         }
-        if(Input.GetMouseButtonDown(1))
+       /* if(Input.GetMouseButtonDown(1))
         {
-            GameManager.Instance.RemoveTrashCan(Random.Range(0,GameManager.Instance.TrashCans.Count));
+            GameManager.Instance.RemoveTrashCan();
             print(GameManager.Instance.TrashCans.Count);
-        }
+        }*/
         
     }
 }
