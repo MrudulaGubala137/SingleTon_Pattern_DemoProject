@@ -9,6 +9,7 @@ public sealed class GameManager
     private List<GameObject> trashCans=new List<GameObject>();
     private List<GameObject> goalPoints=new List<GameObject>();
     public List<GameObject> TrashCans { get { return trashCans; }}
+    public List<GameObject> GoalPoints { get { return goalPoints; }}
     public static GameManager Instance { 
         get { 
             if(instance == null)
@@ -19,6 +20,10 @@ public sealed class GameManager
     public void AddTrashCan(GameObject tempTrashCan)
     {
         TrashCans.Add(tempTrashCan);
+    }
+    public void AddGoalPoints(GameObject tempGoalPoints)
+    {
+        GoalPoints.Add(tempGoalPoints);
     }
     public void RemoveTrashCan(GameObject tempTrashCan)
     {

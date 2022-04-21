@@ -5,7 +5,9 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject healthPrefab;
+    private GameObject trashPrefab;
+    [SerializeField]
+    private GameObject goalPrefab;
     GameObject temp;
     
     // Start is called before the first frame update
@@ -23,10 +25,22 @@ public class SpawnManager : MonoBehaviour
             Ray ray=Camera.main.ScreenPointToRay(Input.mousePosition);
             if(Physics.Raycast(ray.origin, ray.direction,out hit))
             {
-                temp=Instantiate(healthPrefab,hit.point,Quaternion.identity);
+                temp=Instantiate(trashPrefab,hit.point,Quaternion.identity);
              
                 GameManager.Instance.AddTrashCan(temp);
                 print(GameManager.Instance.TrashCans.Count);
+            }
+        }
+        if(Input.GetMouseButtonDown(1))
+        {
+            RaycastHit hitInfo;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray.origin, ray.direction, out hitInfo))
+            {
+                temp = Instantiate(goalPrefab, hitInfo.point, Quaternion.identity);
+
+                GameManager.Instance.AddGoalPoints(temp);
+                print(GameManager.Instance.GoalPoints.Count);
             }
         }
        /* if(Input.GetMouseButtonDown(1))

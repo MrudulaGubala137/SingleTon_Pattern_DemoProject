@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e90bfbe1b38abc4887e3da80a7f4e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goalPoints: []
+  agent: {fileID: 0}
 --- !u!195 &490077217
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -491,7 +491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e90bfbe1b38abc4887e3da80a7f4e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goalPoints: []
+  agent: {fileID: 0}
 --- !u!195 &680964307
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -625,7 +625,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &709825771
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -815,7 +815,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &818495483
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -993,7 +993,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &971462415
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1160,7 +1160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e90bfbe1b38abc4887e3da80a7f4e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goalPoints: []
+  agent: {fileID: 0}
 --- !u!195 &1181089199
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1212,7 +1212,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06facbb70f6cc364eb671edc5bf74712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPrefab: {fileID: 4775741032866935619, guid: cc728035f7acc6146ba51e90e42a9114, type: 3}
+  trashPrefab: {fileID: 1762870407617407486}
+  goalPrefab: {fileID: 780470611}
 --- !u!4 &1422159637
 Transform:
   m_ObjectHideFlags: 0
@@ -1244,7 +1245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e90bfbe1b38abc4887e3da80a7f4e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goalPoints: []
+  agent: {fileID: 0}
 --- !u!195 &1910616570
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1357,7 +1358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e90bfbe1b38abc4887e3da80a7f4e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goalPoints: []
+  agent: {fileID: 0}
 --- !u!195 &2065475975
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1393,7 +1394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4775741032866935619, guid: cc728035f7acc6146ba51e90e42a9114, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5263871811606161913, guid: cc728035f7acc6146ba51e90e42a9114, type: 3}
       propertyPath: m_RootOrder
@@ -1441,3 +1442,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc728035f7acc6146ba51e90e42a9114, type: 3}
+--- !u!1 &1762870407617407486 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4775741032866935619, guid: cc728035f7acc6146ba51e90e42a9114, type: 3}
+  m_PrefabInstance: {fileID: 1762870407617407485}
+  m_PrefabAsset: {fileID: 0}
